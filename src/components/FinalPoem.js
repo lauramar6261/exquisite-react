@@ -1,7 +1,9 @@
 import React from 'react';
 import './FinalPoem.css';
+import PropTypes from 'prop-types';
 
 const FinalPoem = (props) => {
+  //it gets function that passes all the lines from Game
 
   return (
     <div className="FinalPoem">
@@ -18,3 +20,7 @@ const FinalPoem = (props) => {
 }
 
 export default FinalPoem;
+
+FinalPoem.propTypes = {
+  outputLinesCallback: PropTypes.func.isRequired,
+};
