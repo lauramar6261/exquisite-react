@@ -8,11 +8,25 @@ class Game extends Component {
 
   constructor(props) {
     super(props);
+    super(props);
+    this.state = {
+      lines: [
+      ]
+    }
 
   }
 
-  render() {
+  onAddLine = (newLine) => {
+    const { lines } = this.state;
+    lines.push(newLine);
+    this.setState({
+      lines,
+    });
 
+  }
+  render() {
+    //example of iterating over FIELDS
+    console.log(this.state)
     const exampleFormat = FIELDS.map((field) => {
       if (field.key) {
         return field.placeholder;
@@ -21,6 +35,9 @@ class Game extends Component {
       }
     }).join(" ");
 
+    //example of only showing the RecentSubmission
+    //const headerColor = this.state.lines.length >= 1 ? "red-header" : "blue-header";
+    const player = this.state.lines.length + 1
     return (
       <div className="Game">
         <h2>Game</h2>
@@ -35,7 +52,7 @@ class Game extends Component {
 
         <RecentSubmission />
 
-        <PlayerSubmissionForm/>
+        <PlayerSubmissionForm addNewLineCallback={this.onAddLine} player={player}/>
 
         <FinalPoem />
 

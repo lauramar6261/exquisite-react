@@ -5,7 +5,6 @@ import PropTypes from 'prop-types';
 class PlayerSubmissionForm extends Component {
 
   constructor(props) {
-    console.log(props.data)
     super(props);
     this.state = {
       adj1: '',
@@ -43,9 +42,10 @@ class PlayerSubmissionForm extends Component {
 
   render() {
 
+
     return (
       <div className="PlayerSubmissionForm">
-        <h3>Player Submission Form for Player #{  }</h3>
+        <h3>Player Submission Form for Player #{this.props.player}</h3>
 
         <form className="PlayerSubmissionForm__form" >
 
