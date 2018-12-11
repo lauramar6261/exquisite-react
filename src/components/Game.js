@@ -8,6 +8,7 @@ class Game extends Component {
 
   constructor(props) {
     super(props);
+
   }
 
   render() {
@@ -34,7 +35,7 @@ class Game extends Component {
 
         <RecentSubmission />
 
-        <PlayerSubmissionForm />
+        <PlayerSubmissionForm/>
 
         <FinalPoem />
 

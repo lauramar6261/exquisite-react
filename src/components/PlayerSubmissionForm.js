@@ -4,9 +4,19 @@ import './PlayerSubmissionForm.css';
 class PlayerSubmissionForm extends Component {
 
   constructor(props) {
+    console.log(props.data)
     super(props);
   }
 
+  onInputChange = (event) => {
+    const updatedState = {};
+
+    const field = event.target.name;
+    const value = event.target.value;
+
+    updatedState[field] = value;
+    this.setState(updatedState);
+  }
   render() {
 
     return (
@@ -16,14 +26,28 @@ class PlayerSubmissionForm extends Component {
         <form className="PlayerSubmissionForm__form" >
 
           <div className="PlayerSubmissionForm__poem-inputs">
+          {
 
-            {
-              // Put your form inputs here... We've put in one below as an example
-            }
+          }
+            <span>The</span>
             <input
-              placeholder="hm..."
+              placeholder="adjective"
               type="text" />
-
+            <input placeholder="noun" type="text" />
+            <input
+              placeholder="adverb"
+              type="text" />
+            <input
+              placeholder="verb"
+              type="text" />
+            <span>the</span>
+            <input
+              placeholder="adjective"
+              type="text" />
+            <input
+              placeholder="noun"
+              type="text" />
+            <span>.</span>
           </div>
 
           <div className="PlayerSubmissionForm__submit">
