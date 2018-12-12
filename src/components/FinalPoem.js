@@ -26,4 +26,6 @@ export default FinalPoem;
 
 FinalPoem.propTypes = {
   outputLinesCallback: PropTypes.func.isRequired,
+  onButtonClickCallback: PropTypes.func.isRequired,
+  data: PropTypes.array,
 };
