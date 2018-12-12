@@ -8,9 +8,10 @@ const FinalPoem = (props) => {
   const data = props.data
 
   const linesCollection = data.map((field) => {
-      return field.value
+      const key = field.key
+      return key.value
     }).join( " ");
-  
+
   return (
 
     <div className="FinalPoem">
