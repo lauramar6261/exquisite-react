@@ -25,11 +25,9 @@ class Game extends Component {
 
   }
 
-  outputLines = () => {
-    this.state.lines.map((field) => {
-      if (field.key) {
+  outputLines = (data) => {
+    data.map((field) => {
         return field.value
-      }
     }).join( " ");
   }
   render() {
@@ -62,7 +60,7 @@ class Game extends Component {
 
         <PlayerSubmissionForm addNewLineCallback={this.onAddLine} player={player}/>
 
-        <FinalPoem outputLinesCallback = {this.outputLines}/>
+        <FinalPoem outputLinesCallback = {this.outputLines} data={this.state.lines}/>
 
       </div>
     );

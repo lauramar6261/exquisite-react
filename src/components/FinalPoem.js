@@ -4,12 +4,19 @@ import PropTypes from 'prop-types';
 
 const FinalPoem = (props) => {
   //it gets function that passes all the lines from Game
+  console.log(props.data)
+  const data = props.data
 
+  const linesCollection = data.map((field) => {
+      return field.value
+    }).join( " ");
+  
   return (
+
     <div className="FinalPoem">
       <section className="FinalPoem__poem">
         <h3>Final Poem</h3>
-
+        {linesCollection}
       </section>
 
       <div className="FinalPoem__reveal-btn-container">
