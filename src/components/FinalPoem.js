@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 const FinalPoem = (props) => {
   //it gets function that passes all the lines from Game
-  console.log(props.data)
+  //console.log(props.onButtonClickCallback)
   const data = props.data
 
   const linesCollection = data.map((field) => {
@@ -21,7 +21,7 @@ const FinalPoem = (props) => {
       </section>
 
       <div className="FinalPoem__reveal-btn-container">
-        <input type="button" value="We are finished: Reveal the Poem" className="FinalPoem__reveal-btn" />
+        <input type="button" value="We are finished: Reveal the Poem" className="FinalPoem__reveal-btn" onClick={props.onButtonClickCallback} />
       </div>
     </div>
   );

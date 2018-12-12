@@ -30,6 +30,10 @@ class Game extends Component {
         return field.value
     }).join( " ");
   }
+
+  onButtonClick = () => {
+    console.log("hello")
+  }
   render() {
     //example of iterating over FIELDS
     console.log(this.state)
@@ -60,7 +64,7 @@ class Game extends Component {
 
         <PlayerSubmissionForm addNewLineCallback={this.onAddLine} player={player}/>
 
-        <FinalPoem outputLinesCallback = {this.outputLines} data={this.state.lines}/>
+        <FinalPoem outputLinesCallback = {this.outputLines} data={this.state.lines} onButtonClickCallback={this.onButtonClick}/>
 
       </div>
     );
