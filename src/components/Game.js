@@ -11,7 +11,8 @@ class Game extends Component {
     super(props);
     this.state = {
       lines: [
-      ]
+      ],
+      done: false
     }
 
   }
@@ -25,15 +26,23 @@ class Game extends Component {
 
   }
 
-  outputLines = (data) => {
-    data.map((field) => {
-        return field.value
-    }).join( " ");
+  onButtonClick = () => {
+    this.setState({done: true});
   }
 
-  onButtonClick = () => {
-    console.log("hello")
+  outputLines = (field) => {
+    const line = []
+    line.push("The")
+    line.push(field.adj1)
+    line.push(field.noun1)
+    line.push(field.adv)
+    line.push(field.verb)
+    line.push("the")
+    line.push(field.adj2)
+    line.push(field.noun2)
+    return line
   }
+
   render() {
     //example of iterating over FIELDS
     console.log(this.state)
@@ -45,8 +54,6 @@ class Game extends Component {
       }
     }).join(" ");
 
-    //example of only showing the RecentSubmission
-    //const headerColor = this.state.lines.length >= 1 ? "red-header" : "blue-header";
     const player = this.state.lines.length + 1
     return (
       <div className="Game">
@@ -64,7 +71,7 @@ class Game extends Component {
 
         <PlayerSubmissionForm addNewLineCallback={this.onAddLine} player={player}/>
 
-        <FinalPoem outputLinesCallback = {this.outputLines} data={this.state.lines} onButtonClickCallback={this.onButtonClick}/>
+        <FinalPoem onButtonClickCallback={this.onButtonClick} data={this.state} outputLinesCallback={this.outputLines}/>
 
       </div>
     );

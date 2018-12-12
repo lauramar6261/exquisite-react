@@ -3,21 +3,16 @@ import './FinalPoem.css';
 import PropTypes from 'prop-types';
 
 const FinalPoem = (props) => {
-  //it gets function that passes all the lines from Game
-  //console.log(props.onButtonClickCallback)
-  const data = props.data
+  console.log(props.data)
 
-  const linesCollection = data.map((field) => {
-      const key = field.key
-      return key.value
-    }).join( " ");
 
   return (
 
     <div className="FinalPoem">
       <section className="FinalPoem__poem">
         <h3>Final Poem</h3>
-        {linesCollection}
+        <p> {props.data.done ? props.data.lines.map((line) => <div>{props.outputLinesCallback(line).join(" ")}</div>) : ""}</p>
+
       </section>
 
       <div className="FinalPoem__reveal-btn-container">
