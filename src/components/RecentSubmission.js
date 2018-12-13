@@ -4,8 +4,15 @@ import './RecentSubmission.css';
 const RecentSubmission = (props) => {
   const index = props.data.lines.length - 1
   const item = props.data.lines[index]
-  const string = item? props.outputLinesCallback(item).join(" "): ""
-  const title = item? "The Most Recent Submission":""
+  let string = ""
+  let title =""
+  if (item !== undefined && props.data.done === false ) {
+    string = props.outputLinesCallback(item).join(" ")
+    title = "The Most Recent Submission"
+  } else {
+    title = ""
+    string = ""
+  }
 
   console.log(string)
   return (
