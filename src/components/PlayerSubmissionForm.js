@@ -41,7 +41,12 @@ class PlayerSubmissionForm extends Component {
   }
 
   render() {
-
+    const headerColor_adj1 = this.state.adj1 === '' ? "PlayerSubmissionFormt__input--invalid": "";
+    const headerColor_noun1 = this.state.noun1 === '' ? "PlayerSubmissionFormt__input--invalid": "";
+    const headerColor_adv = this.state.adv === '' ? "PlayerSubmissionFormt__input--invalid": "";
+    const headerColor_verb = this.state.verb === '' ? "PlayerSubmissionFormt__input--invalid": "";
+    const headerColor_adj2 = this.state.adj2 === '' ? "PlayerSubmissionFormt__input--invalid": "";
+    const headerColor_noun2 = this.state.noun2 === '' ? "PlayerSubmissionFormt__input--invalid": "";
 
     return (
       <div className="PlayerSubmissionForm">
@@ -49,27 +54,27 @@ class PlayerSubmissionForm extends Component {
 
         <form className="PlayerSubmissionForm__form" onSubmit={this.onSubmitHandler}>
 
-          <div className="PlayerSubmissionForm__poem-inputs">
+          <div>
             <span>The</span>
-            <input
+            <input className ={headerColor_adj1}
               name="adj1"
               placeholder="adjective"
               value = {this.state.adj1}
               onChange={this.onFieldChangeHandler}
               type="text" />
-            <input
+            <input className={headerColor_noun1}
               name="noun1"
               placeholder="noun"
               value = {this.state.noun1}
               onChange={this.onFieldChangeHandler}
               type="text" />
-            <input
+            <input className={headerColor_adv}
               name="adv"
               placeholder="adverb"
               value = {this.state.adv}
               onChange={this.onFieldChangeHandler}
               type="text" />
-            <input
+            <input className={headerColor_verb}
               name="verb"
               placeholder="verb"
               value = {this.state.verb}
@@ -77,12 +82,12 @@ class PlayerSubmissionForm extends Component {
               type="text" />
             <span>the</span>
             <input
-              name="adj2"
+              name="adj2" className={headerColor_adj2}
               placeholder="adjective"
               value = {this.state.adj2}
               onChange={this.onFieldChangeHandler}
               type="text" />
-            <input
+            <input className={headerColor_noun2}
               name="noun2"
               placeholder="noun"
               value = {this.state.noun2}
