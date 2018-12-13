@@ -71,7 +71,7 @@ class Game extends Component {
 
         {this.state.done ? "" : <PlayerSubmissionForm addNewLineCallback={this.onAddLine} player={player}/>}
 
-        {this.state.done ? "" : <FinalPoem onButtonClickCallback={this.onButtonClick} data={this.state} outputLinesCallback={this.outputLines}/>}
+        <FinalPoem onButtonClickCallback={this.onButtonClick} data={this.state} outputLinesCallback={this.outputLines}/>
 
       </div>
     );
