@@ -67,7 +67,7 @@ class Game extends Component {
           { exampleFormat }
         </p>
 
-        <RecentSubmission />
+        <RecentSubmission data={this.state} outputLinesCallback={this.outputLines}/>
 
         <PlayerSubmissionForm addNewLineCallback={this.onAddLine} player={player}/>
 
